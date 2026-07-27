@@ -12,7 +12,9 @@
         "command": "cmake --preset debug",
     },
     {
-        "label": "Build Debug",
-        "command": "cmake --build --preset debug",
+        "label": "Run Debug",
+        "command": "cmake --build --preset debug && ./build/debug/tenjin",
+        "show_summary": false,
+        "show_command": false
     },
 ]

@@ -1,0 +1,18 @@
+[
+    {
+        "label": "Bootstrap",
+        "command": "cmake --preset debug && cmake --build --preset debug"
+    },
+    {
+        "label": "Export Release",
+        "command": "cmake --preset release && cmake --build --preset release",
+    },
+    {
+        "label": "Configure CMake",
+        "command": "cmake --preset debug",
+    },
+    {
+        "label": "Build Debug",
+        "command": "cmake --build --preset debug",
+    },
+]

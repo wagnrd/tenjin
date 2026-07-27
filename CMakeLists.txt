@@ -10,3 +10,5 @@ file(GLOB_RECURSE TENJIN_SOURCES CONFIGURE_DEPENDS
 )
 
 add_executable(tenjin ${TENJIN_SOURCES})
+
+target_include_directories(tenjin PRIVATE vendor/glm)

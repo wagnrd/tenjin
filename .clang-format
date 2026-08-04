@@ -12,6 +12,8 @@ AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: false
 AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
 BraceWrapping:
   AfterCaseLabel: false
   AfterClass: false
@@ -35,6 +37,9 @@ BreakConstructorInitializersBeforeComma: false
 ColumnLimit: 120
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ContinuationIndentWidth: 8
+EmptyLineAfterAccessModifier: Never
+EmptyLineBeforeAccessModifier: Never
+IncludeBlocks: Regroup
 IncludeCategories:
   - Regex: '^<.*'
     Priority: 1
@@ -44,12 +49,22 @@ IncludeCategories:
     Priority: 3
 IncludeIsMainRegex: '([-_](test|unittest))?$'
 IndentCaseLabels: true
+IndentPPDirectives: AfterHash
 IndentWidth: 4
+InsertBraces: true
 InsertNewlineAtEOF: true
 MacroBlockBegin: ''
 MacroBlockEnd: ''
+MaxEmptyLinesToKeep: 1
 NamespaceIndentation: All
+PackConstructorInitializers: Never
 PointerAlignment: Left
+PPIndentWidth: 4
+QualifierAlignment: Leave
+ReferenceAlignment: Pointer
+SeparateDefinitionBlocks: Always
+SortIncludes: CaseInsensitive
+SortUsingDeclarations: true
 SpaceAfterCStyleCast: true
 SpaceAfterTemplateKeyword: false
 SpaceBeforeRangeBasedForLoopColon: false

@@ -17,4 +17,16 @@
         "show_summary": false,
         "show_command": false
     },
+    {
+        "label": "Format",
+        "command": "cmake --build --preset debug --target format"
+    },
+    {
+        "label": "Format Check",
+        "command": "cmake --build --preset debug --target format-check"
+    },
+    {
+        "label": "Lint",
+        "command": "cmake --build --preset debug --target lint"
+    },
 ]

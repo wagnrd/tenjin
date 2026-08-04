@@ -1,7 +1,8 @@
 #include <iostream>
-#include "terminal_graphics/terminal.hpp"
+#include "renderers/terminal/terminal.hpp"
 
 int main() {
-    const auto size = Terminal::get_size();
+    Terminal terminal{};
+    const auto size = terminal.get_size();
     std::cout << "Terminal size: " << size.x << "x" << size.y << std::endl;
 }

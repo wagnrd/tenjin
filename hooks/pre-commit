@@ -1,0 +1,18 @@
+#!/bin/sh
+# Pre-commit hook: configure the build, then run format and lint checks.
+# Aborts the commit if formatting or linting fails.
+
+set -e
+
+cd "$(git rev-parse --show-toplevel)"
+
+echo "==> Configure (cmake --preset debug)"
+cmake --preset debug
+
+echo "==> Format check"
+cmake --build --preset debug --target format-check
+
+echo "==> Lint"
+cmake --build --preset debug --target lint
+
+echo "==> All checks passed"

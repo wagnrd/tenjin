@@ -37,7 +37,12 @@ if(CLANG_FORMAT)
         VERBATIM
     )
 else()
-    message(STATUS "clang-format not found - 'format' and 'format-check' targets unavailable")
+    add_custom_target(format
+        COMMAND ${CMAKE_COMMAND} -DTOOL_NAME=clang-format -P ${CMAKE_SOURCE_DIR}/cmake/require-tool.cmake
+    )
+    add_custom_target(format-check
+        COMMAND ${CMAKE_COMMAND} -DTOOL_NAME=clang-format -P ${CMAKE_SOURCE_DIR}/cmake/require-tool.cmake
+    )
 endif()
 
 if(APPLE)
@@ -69,5 +74,7 @@ if(CLANG_TIDY)
         VERBATIM
     )
 else()
-    message(STATUS "clang-tidy not found - 'lint' target unavailable (brew install llvm)")
+    add_custom_target(lint
+        COMMAND ${CMAKE_COMMAND} -DTOOL_NAME=clang-tidy -P ${CMAKE_SOURCE_DIR}/cmake/require-tool.cmake
+    )
 endif()

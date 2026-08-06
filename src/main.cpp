@@ -4,6 +4,6 @@
 
 int main() {
     Terminal terminal{};
-    const auto size = terminal.get_dimensions();
+    const auto size = terminal.get_size();
     std::cout << "Terminal size: " << size.x << "x" << size.y << '\n';
 }

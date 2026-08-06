@@ -16,5 +16,5 @@ class Terminal {
     struct winsize w;
 #endif
 public:
-    [[nodiscard]] glm::ivec2 get_dimensions();
+    [[nodiscard]] glm::ivec2 get_size();
 };

@@ -10,7 +10,7 @@
 #include <cstdio>
 #include <glm/vec2.hpp>
 
-glm::ivec2 Terminal::get_size() {
+glm::ivec2 Terminal::get_dimensions() {
 #ifdef _WIN32
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
     return {csbi.srWindow.Right - csbi.srWindow.Left + 1, csbi.srWindow.Bottom - csbi.srWindow.Top + 1};

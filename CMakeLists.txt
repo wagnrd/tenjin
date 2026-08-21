@@ -5,13 +5,25 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Keep the executable and SDL's shared library in the same build directory.
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
+
 file(GLOB_RECURSE TENJIN_SOURCES CONFIGURE_DEPENDS
      src/*.cpp src/*.c src/*.hpp src/*.h
 )
 
+add_subdirectory(vendor/SDL EXCLUDE_FROM_ALL)
+
 add_executable(tenjin ${TENJIN_SOURCES})
 
 target_include_directories(tenjin PRIVATE vendor/glm)
+target_link_libraries(tenjin PRIVATE SDL3::SDL3)
+
+
+#################
+# Lint & Format #
+#################
 
 find_program(CLANG_FORMAT clang-format
     HINTS /Library/Developer/CommandLineTools/usr/bin

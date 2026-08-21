@@ -1,3 +1,5 @@
+#pragma once
+
 #include "glm/ext/vector_int2.hpp"
 
 #ifdef _WIN32
@@ -15,6 +17,7 @@ class Terminal {
 #elif defined(__linux__) || defined(__APPLE__)
     struct winsize w;
 #endif
+
 public:
     [[nodiscard]] glm::ivec2 get_size();
 };

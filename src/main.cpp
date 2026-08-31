@@ -1,39 +1,26 @@
 #include <iostream>
+#include <utility>
 
 #include "scene_graph/node.hpp"
 
-class character : public tenjin::node {
-    node* enemy_;
+class Character : public tenjin::Node<Character> {
+
     std::string name_;
 
 public:
-    void update() override {
-        std::cout << "Name: " << name_ << '\n';
+    explicit Character(std::string name) :
+        name_(std::move(name)) {
     }
 
-    void set_enemy(node* enemy) {
-        enemy_ = enemy;
-    }
-
-    void set_name(const std::string& name) {
-        name_ = name;
+    void test() {
+        std::cout << "Character name: " << name_ << '\n';
     }
 };
 
 int main() {
-    std::cout << "Hello, World!" << '\n';
-    auto character_ptr = character::create();
-    auto* character_ptr2 = character_ptr.get();
-
-    auto* character = static_cast<class character*>(character_ptr2);
-    character->set_name("Character");
-
-    {
-        auto scene = tenjin::node::create();
-        auto& enemy = static_cast<class character&>(scene->add_node(character::create()));
-        enemy.set_name("Enemy");
-        character->set_enemy(&enemy);
-    }
-
-    character->update();
+    tenjin::Node scene{};
+    auto character_up = Character::create("Bob");
+    auto character_wp = scene.add_node(std::move(character_up));
+    auto character = character_wp.lock();
+    character->test();
 }

@@ -1,7 +1,7 @@
 #pragma once
 
 namespace tenjin {
-    class engine {
+    class Engine {
     public:
     };
 } // namespace tenjin

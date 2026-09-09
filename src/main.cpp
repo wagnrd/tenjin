@@ -1,6 +1,3 @@
-#include "engine/app.hpp"
-
-/*
 #include <iostream>
 #include <utility>
 
@@ -27,6 +24,3 @@ int main() {
     auto character = character_wp.lock();
     character->test();
 }
- */
-
-tenjin::App app{};

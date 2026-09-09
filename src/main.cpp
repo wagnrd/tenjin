@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "engine/app.hpp"
 
 /*
@@ -29,4 +31,8 @@ int main() {
 }
  */
 
-tenjin::App app{};
+int tenjin_main() {
+    std::cout << "tenjin_setup\n";
+
+    return 0;
+}

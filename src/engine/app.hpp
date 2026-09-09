@@ -1,8 +1,5 @@
-#define SDL_MAIN_USE_CALLBACKS
-#include <SDL3/SDL_main.h>
+#pragma once
 
-namespace tenjin {
-    class App {
-    public:
-    };
-} // namespace tenjin
+#define SDL_MAIN_USE_CALLBACKS
+
+int tenjin_main();

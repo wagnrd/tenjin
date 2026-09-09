@@ -22,6 +22,7 @@ Checks: >-
   -cppcoreguidelines-pro-*,
   -misc-include-cleaner,
   -misc-non-private-member-variables-in-classes,
+  -misc-use-anonymous-namespace,
   -modernize-use-trailing-return-type,
   -portability-avoid-pragma-once,
   -portability-restrict-system-includes,
